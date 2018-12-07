@@ -1,6 +1,6 @@
 import axios from 'axios'
 export default {
-  // 添加部门
+  // 添加组织
   create: async (org) => {
     let rest = await axios.post('/api/orgs', org)
     return rest.data
