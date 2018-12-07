@@ -6,7 +6,7 @@ export default {
     return rest.data
   },
 
-  // 删除部门
+  // 删除组织
   delete: async (orgId) => {
     let resp = await axios.delete(`/api/orgs/${orgId}`)
     return resp
