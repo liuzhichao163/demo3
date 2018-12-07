@@ -52,7 +52,7 @@ export default {
     return {
       visible: false,
       tableData: [],
-      itle: '',
+      title: '',
       total: 0,
       filters: {
         userName: '',

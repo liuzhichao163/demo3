@@ -62,7 +62,7 @@ export default{
         this.userForm = this.formData
       }
       if (!val) {
-        this.$emit('update:visible', false)
+        // this.$emit('update:visible', false)
         this.userForm = {
           userId: null,
           userName: null,
@@ -105,10 +105,10 @@ export default{
       }
     }
   },
-  // 级联查询获得所有部门信息
+  // 级联查询获得所有部门名称
   async mounted () {
-    let list = await OrgApi.queryOrgs(this.filters)
-    this.orgData = list.orgList
+    let resp = await OrgApi.queryOrgsByName(this.filters)
+    this.orgData = resp.orgList
   },
   methods: {
     save () {

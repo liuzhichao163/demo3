@@ -42,10 +42,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       sourceMap: config.build.productionSourceMap,
       parallel: true
     }),
-    new ZipPlugin({
-      path:path.join(__dirname,'../dist'),
-      filename: 'dist.zip'
-    }),
+
     // extract css into its own file
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css'),
@@ -122,6 +119,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ])
   ]
+})
+new ZipPlugin({
+  path:path.join(__dirname,'../dist'),
+  filename: 'dist.zip'
 })
 
 if (config.build.productionGzip) {
